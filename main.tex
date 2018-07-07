@@ -1,5 +1,322 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+\documentclass[14pt]{article}
+%Fonts and Math packages
+\usepackage{amsmath,amssymb,amsfonts,amsthm,bm,bbm,cancel,wasysym}
+%Graphics packages
+\usepackage{epsfig,graphics,graphicx,epstopdf}
+%Tabular packages
+\usepackage{array,booktabs,colortbl,colordvi,multirow}
+% Colors
+\usepackage{colordvi,color,xcolor}
+% Links
+\usepackage{hyperref}
+% Others
+\usepackage{rotating}
+\usepackage{authblk}
+
+%This is the next version file
+
+%------------------------------ TOM'S preamble --------------------
+\usepackage{verbatim}
+\usepackage{cite}
+\usepackage{subfig}
+\usepackage{setspace}
+\usepackage{url}
+\usepackage[percent]{overpic}
+\usepackage{slashed}
+\usepackage{authblk}
+\usepackage{xspace}
+\usepackage{fullpage}
+\usepackage{hyperref}
+
+% Commonly used things
+\newcommand{\Fermi}[0]{\textit{Fermi}\xspace}
+\newcommand{\gtlike}[0]{\lstinline!gtlike!\xspace}
+\newcommand{\sigmav}[0]{\ensuremath{\langle \sigma v \rangle}\xspace}
+\newcommand{\bbbar}[0]{\ensuremath{b \bar b}\xspace}
+
+\newcommand{\sigv}[0]{\ensuremath{\langle\sigma v\rangle}\xspace}
+\newcommand{\sigvm}[0]{\ensuremath{\langle\sigma v\rangle_{\rm{UL}}}\xspace}
+\newcommand{\tsigv}[0]{\ensuremath{\langle\sigma v\rangle R^{2}}\xspace}
+
+% Units
+\newcommand{\unit}[1]{\ensuremath{\mathrm{\,#1}}\xspace}
+\newcommand{\TeV}{\unit{TeV}}
+\newcommand{\GeV}{\unit{GeV}}
+\newcommand{\MeV}{\unit{MeV}}
+\newcommand{\degree}{\unit{^{\circ}}}
+\newcommand{\cm}{\unit{cm}}
+\newcommand{\kpc}{\unit{kpc}}
+\newcommand{\second}{\unit{s}}
+\newcommand{\photons}{\unit{photons}}
+\renewcommand{\photon}{\unit{photons}}
+\newcommand{\ph}{\unit{photons}}
+
+% Reference
+\newcommand{\Figref}[1]{Figure \ref{figs:#1}}
+\newcommand{\Secref}[1]{Section \ref{sec:#1}}
+\newcommand{\Subsecref}[1]{Section \ref{subsec:#1}}
+\newcommand{\Eqnref}[1]{Eq.~(\ref{eqn:#1})}
+
+\newcommand{\figref}[1]{figure \ref{figs:#1}}
+\newcommand{\secref}[1]{section \ref{sec:#1}}
+\newcommand{\subsecref}[1]{section \ref{subsec:#1}}
+\newcommand{\eqnref}[1]{eq.~(\ref{eqn:#1})}
+
+\def\tev{\,{\rm TeV}}
+\def\gev{\,{\rm GeV}}
+\def\ie{{\it i.e.}}
+\def\eg{{\it e.g.}}
+\def\etc{{\it etc}}
+\def\etal{{\it et al.}}
+\def\ibid{{\it ibid}.}
+
+\def\to{\rightarrow}
+\def\Fermi{\,{\it Fermi}}
+
+\newskip\zatskip \zatskip=0pt plus0pt minus0pt
+\def\matth{\mathsurround=0pt}
+\def\lsim{\mathrel{\mathpalette\atversim<}}
+\def\gsim{\mathrel{\mathpalette\atversim>}}
+\def\atversim#1#2{\lower0.7ex\vbox{\baselineskip\zatskip\lineskip\zatskip
+  \lineskiplimit 0pt\ialign{$\matth#1\hfil##\hfil$\crcr#2\crcr\sim\crcr}}}
+
+
+%------------------------------Comments --------------------
+
+\newcommand{\JH}[1]{{\color{green} \bf JLH~\![#1]}} % J. Hewett comments
+
+\newcommand{\TR}[1]{{\color{red} \bf TR~\![#1]}} % T. Rizzo comments
+
+
+%--------------------------- TEXT DIMENSIONS AND MARGINS ------------------------------%
+
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+\renewcommand{\textfraction}{0}
+\renewcommand{\baselinestretch}{1.0}
+\parskip=1.0ex
+\setcounter{topnumber}{10}
+\setcounter{bottomnumber}{10}
+\setcounter{totalnumber}{10}
+
+\textwidth=16cm
+\textheight=23cm
+\oddsidemargin=0.2cm
+\evensidemargin=0.2cm
+
+\author[1]{Clement Helsens}
+\author[2]{Michelangelo L. Mangano}
+\author[3]{Thomas G. Rizzo}
+\author[1]{Michele Selvaggi}
+
+\affil[1]{CERN EP-Departement, CH-1211 Geneva 23, Switzerland}
+\affil[2]{CERN TH-Departement, CH-1211 Geneva 23, Switzerland}
+\affil[3]{SLAC National Accelerator Laboratory 2575 Sand Hill Rd., Menlo Park, CA, 94025 USA}
+
+\title{$Z'$ identification at the HE-LHC} 
+
+%------------------------------------- BEGIN DOCUMENT ------------------------------------------%
+
 \begin{document}
-(Type your content here.)
+\maketitle
+\tableofcontents
+
+
+%--------------------------------------------- ABSTRACT ---------------------------------------------%
+\begin{abstract}
+ 
+\noindent
+
+The 14 TeV LHC with L=3 ab$^{-1}$ of integrated luminosity can search for new $Z'$ gauge bosons from the classic extended gauge theories up to masses 
+of roughly $\simeq 6$ TeV.  Here we analyzed the capability of the 27 TeV HE-LHC with L=15 ab$^{-1}$ to distinguish among six $Z'$ models employing only 
+the $e^+e^-$ and $\mu^+\mu^-$ channels assuming that $M_{Z'}=6$ TeV. Under the assumption that these $Z'$'s decay only to SM particles,  we show that 
+there are sufficient observables to perform this model differentiation in most cases. 
+\end{abstract}
+
+
+%-------------------------------- DOCUMENT: INTRODUCTION ---------------------------------%
+
+\section{Context of the study}
+It is legitimate to assume that a heavy resonance could be seen at the end of High Luminosity LHC (HL-HLC). If that is the case a new collider with higher energy 
+in the center of mass is needed to study its property. In this document we present the discrimination potential of both HE-LHC and FCC.
+
+
+\section{Bounds from HL-LHC}
+As a starting point For $\sqrt s=14$ TeV, what are the typical exclusion/discovery reaches for some standard reference $Z'$ models assuming L=3 ab$^{-1}$ 
+employing only the $e^+e^-$ and $\mu^+\mu^-$ channels? 
+
+To address this and the other questions below we will use the same set of $Z'$ models as employed in \cite{Rizzo:2014xma} and mostly in \cite{Han:2013mra}, both of 
+which we will refer to frequently. We employ the MMHT2014 NNLO set \cite{Harland-Lang:2014zoa} throughout with an appropriate constant $K$-factor (=1.27) for numerics. 
+The upper panel in Fig.~\ref{toy} shows the production cross section times leptonic BF for these models at 14 TeV in the NWA. It has 
+been and will be assumed here that these $Z'$ states only decay to SM particles. 
+
+Using the present ATLAS and CMS results at 13 TeV, \cite{Aaboud:2017buh} and \cite{Sirunyan:2018exx}, it is straightforward to estimate by extrapolation the eventual 14 TeV 
+exclusion reach in the combined $e+\mu$ sample; this is given in the first column of Table~\ref{spec}. For discovery, only the $e$ channel is used due to poor $\mu$-pair mass 
+resolution near $M_{Z'}=6$ TeV although the muons will add some additional support for any observed excess as large masses. Estimates of the $3\sigma$ evidence and $5\sigma$ 
+discovery limits are also given in the Table. Based on these results, we will assume in our study below that we are dealing with a $Z'$ of mass 6 TeV; somewhat smaller mass 
+choices will lead to very similar conclusions based on the ratio of predicted event rates shown in the lower panel of Fig.~\ref{toy}.  Fig.\ref{toy2} shows the NWA cross 
+sections for the same set of models but now at 27 TeV; with L=15 ab$^{-1}$, we note that very large statistical samples will be available for the case of $M_{Z'}=6$ TeV 
+for each dilepton channel. 
+
+
+%
+%\begin{figure}[htbp]
+%\centerline{\includegraphics[width=5.0in,angle=0]{zp14tev-ref.pdf}}
+%\vspace*{-2.5cm}
+%\centerline{\includegraphics[width=5.0in,angle=0]{scaled-ratio.pdf}}
+%\vspace*{-1.30cm}
+%\caption{(Top) $\sigma B_l$ in the NWA for the $Z'$ production at the $\sqrt s=14$ TeV LHC as functions of the $Z'$ mass: SSM(red), LRM (blue), $\psi$(green), $\chi$(magenta), 
+%$\eta$(cyan), I(yellow).  (Bottom) Ratio of the number of events  for $\sqrt s=27$ TeV, L=15 ab$^{-1}$ to that at 13[14] TeV, L=3 ab$^{-1}$ for 
+%$\bar u u$ (red) and $\bar d d$ (blue)  [green, cyan] initial state partons with fixed invariant mass $M$.}
+%\label{toy}
+%\end{figure}
+%
+
+
+%
+\begin{table}
+\centering
+\begin{tabular}{|l|c|c|c|} \hline\hline
+  Model &   95$\%$ CL     &  $3\sigma$     &   $5\sigma$   \\
+\hline
+SSM    &     6.62     &  6.09        &  5.62     \\
+LRM    &   6.39     & 5.85        & 5.39  \\
+$\psi$    &  6.10   & 5.55   & 5.07  \\
+$\chi$   &  6.22    & 5.68    & 5.26   \\
+$\eta$   &  6.15     &  5.59  &  5.16   \\
+~I        & 5.98   &  5.45   &  5.05  \\
+\hline\hline
+\end{tabular}
+\caption{ $\sqrt s=14$ TeV results for $M_{Z'}$ in TeV as discussed in the text. }
+\label{spec}
+\end{table}
+%
+
+
+Question: Can we use just this dilepton channel to distinguish between these six $Z'$ models?  
+
+We make use of 3 observables, all in NWA: $\sigma B_l$, the forward-backward asymmetry, $A_{FB}$ and the rapidity ratio, $r_y$. These last two are defined 
+and discussed at some extent in both \cite{Rizzo:2014xma} and \cite{Han:2013mra}.  Given the ATLAS and CMS analyses as presented in \cite{Han:2016qpd} 
+and \cite{CMS:2017zzj} we employ the entire range of rapidity $|y|\leq 2.5$ in defining these quantities. Based on these same works and \cite{Han:2013mra}, 
+In addition to usual statistical errors, we will assume a $2\%$ systematic error on the two ratios as most uncertainties (lumi and PDF) will cancel between numerators 
+and denominators. For $\sigma B_l$, we assign a $5\%$ systematic error in addition to this $2\%$; all errors are then added in quadrature. I am aware that these may 
+be aggressive numbers but the plots will tell all. 
+
+%
+%\begin{figure}[htbp]
+%\centerline{\includegraphics[width=5.0in,angle=0]{zp27tev-ref.pdf}}
+%\vspace*{-1.30cm}
+%\caption{ Same as the top panel in the previous Figure but now for the HE-LHC.}
+%\label{toy2}
+%\end{figure}
+%
+
+
+Fig.~\ref{toy3} shows the correlated predictions for these 3 observables for these six models given the above assumptions and employing {\it only} a single dilepton 
+channel. Here we see that apart from a possible near degeneracy in models $\psi,\eta$, a reasonable $Z'$ model separation is indeed achieved. It is clear that this 
+remains possible even with somewhat larger values for the systematic errors. I note again that the use of $\sigma B_l$ relies on the absence of new non-SM decay 
+modes.
+
+
+%
+%\begin{figure}[htbp]
+%\centerline{\includegraphics[width=5.0in,angle=0]{compare2.pdf}}
+%\vspace*{-2.5cm}
+%\centerline{\includegraphics[width=5.0in,angle=0]{compare3.pdf}}
+%\vspace*{-1.30cm}
+%\caption{(Top) $\sigma B_l$ vs $A_{FB}$ and (Bottom) $r_y$ vs $A_{FB}$ at the HE-LHC assuming $M_Z'=6$ TeV as discussed in the text. 
+%SSM(black), LRM(red), $\psi$ (blue), $\chi$ (green), $\eta$ (magenta) and I (cyan). $1\sigma$ errors only are shown. }
+%\label{toy3}
+%\end{figure}
+%
+
+
+
+
+
+
+%------------------------------------ ACKNOWLEDGEMENTS ---------------------------------------%
+\section*{Acknowledgements}
+
+
+%
+This work was supported by the Department of Energy, Contract DE-AC02-76SF00515.
+
+
+%------------------------------------------- REFERENCES -------------------------------------------%
+
+
+\begin{thebibliography}{99}
+
+
+%\cite{Rizzo:2014xma}
+\bibitem{Rizzo:2014xma} 
+  T.~G.~Rizzo,
+  %``Exploring new gauge bosons at a 100 TeV collider,''
+  Phys.\ Rev.\ D {\bf 89}, no. 9, 095022 (2014)
+  doi:10.1103/PhysRevD.89.095022
+  [arXiv:1403.5465 [hep-ph]].
+  %%CITATION = doi:10.1103/PhysRevD.89.095022;%%
+  
+%\cite{Han:2013mra}
+\bibitem{Han:2013mra} 
+  T.~Han, P.~Langacker, Z.~Liu and L.~T.~Wang,
+  %``Diagnosis of a New Neutral Gauge Boson at the LHC and ILC for Snowmass 2013,''
+  arXiv:1308.2738 [hep-ph].
+  %%CITATION = ARXIV:1308.2738;%%
+ 
+ %\cite{Harland-Lang:2014zoa}
+\bibitem{Harland-Lang:2014zoa} 
+  L.~A.~Harland-Lang, A.~D.~Martin, P.~Motylinski and R.~S.~Thorne,
+  %``Parton distributions in the LHC era: MMHT 2014 PDFs,''
+  Eur.\ Phys.\ J.\ C {\bf 75}, no. 5, 204 (2015)
+  doi:10.1140/epjc/s10052-015-3397-6
+  [arXiv:1412.3989 [hep-ph]].
+  %%CITATION = doi:10.1140/epjc/s10052-015-3397-6;%%
+  
+
+%\cite{Aaboud:2017buh}
+\bibitem{Aaboud:2017buh} 
+  M.~Aaboud {\it et al.} [ATLAS Collaboration],
+  %``Search for new high-mass phenomena in the dilepton final state using 36 fb$^{?1}$ of proton-proton collision data at $ \sqrt{s}=13 $ TeV with the ATLAS detector,''
+  JHEP {\bf 1710}, 182 (2017)
+  doi:10.1007/JHEP10(2017)182
+  [arXiv:1707.02424 [hep-ex]].
+  %%CITATION = doi:10.1007/JHEP10(2017)182;%%
+
+
+%\cite{Sirunyan:2018exx}
+\bibitem{Sirunyan:2018exx} 
+  A.~M.~Sirunyan {\it et al.} [CMS Collaboration],
+  %``Search for high-mass resonances in dilepton final states in proton-proton collisions at $\sqrt{s}=$ 13 TeV,''
+  arXiv:1803.06292 [hep-ex].
+  %%CITATION = ARXIV:1803.06292;%%
+
+
+%\cite{Han:2016qpd}
+\bibitem{Han:2016qpd} 
+  J.~Han [ATLAS and CMS Collaborations],
+  %``Dilepton Forward-Backward Asymmetry and electroweak mixing angle at ATLAS and CMS,''
+  PoS ICHEP {\bf 2016}, 677 (2016).
+ 
+ %\cite{CMS:2017zzj}
+\bibitem{CMS:2017zzj} 
+  CMS Collaboration [CMS Collaboration],
+  %``Measurement of the weak mixing angle with the forward-backward asymmetry of Drell-Yan events at 8 TeV,''
+  CMS-PAS-SMP-16-007.
+  %%CITATION = CMS-PAS-SMP-16-007;%%
+  
+
+
+\end{thebibliography}
+
+%-------------------------------------------------- END --------------------------------------------------%
+
 \end{document}
+
+
+
+  
+ 
+
+
