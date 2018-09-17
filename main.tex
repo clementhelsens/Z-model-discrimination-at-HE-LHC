@@ -50,6 +50,7 @@
 \newcommand{\photons}{\unit{photons}}
 \renewcommand{\photon}{\unit{photons}}
 \newcommand{\ph}{\unit{photons}}
+\newcommand*{\pt}{\ensuremath{p_{\text{T}}}}
 
 % Reference
 \newcommand{\Figref}[1]{Figure \ref{figs:#1}}
@@ -140,7 +141,8 @@ there are sufficient observables to perform this model differentiation in most c
 
 \section{Context of the study}
 It is legitimate to assume that a heavy resonance could be seen at the end of High Luminosity LHC (HL-HLC). If that is the case a new collider with higher energy 
-in the center of mass is needed to study its property as not enough events will be available at 14~TeV. In this document we present the discrimination potential of both HE-LHC and FCC.
+in the center of mass is needed to study its property as not enough events will be available at 14~TeV. In this document we present the discrimination potential of a High Energy LHC (HE-LHC)
+with a center of mass energy of 27~TeV.
 
 
 \section{Bounds from HL-LHC}
@@ -160,12 +162,10 @@ sections for the same set of models but now at 27 TeV; with L=15 ab$^{-1}$, we n
 for each dilepton channel. 
 
 
-
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=5.0in,angle=0]{figures/zp14tev-ref.pdf}}
-\vspace*{-2.5cm}
-\centerline{\includegraphics[width=5.0in,angle=0]{figures/scaled-ratio.pdf}}
-\vspace*{-1.30cm}
+  \centering
+    \includegraphics[trim={2cm 2cm 2cm 2cm},clip,width=0.49\columnwidth]{figures/zp14tev-ref.pdf}
+    \includegraphics[trim={2cm 2cm 2cm 2cm},clip,width=0.49\columnwidth]{figures/scaled-ratio.pdf}
 \caption{(Top) $\sigma B_l$ in the NWA for the $Z'$ production at the $\sqrt s=14$ TeV LHC as functions of the $Z'$ mass: SSM(red), LRM (blue), $\psi$(green), $\chi$(magenta), 
 $\eta$(cyan), I(yellow).  (Bottom) Ratio of the number of events  for $\sqrt s=27$ TeV, L=15 ab$^{-1}$ to that at 13[14] TeV, L=3 ab$^{-1}$ for 
 $\bar u u$ (red) and $\bar d d$ (blue)  [green, cyan] initial state partons with fixed invariant mass $M$.}
@@ -206,8 +206,8 @@ be aggressive numbers but the plots will tell all.
 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=5.0in,angle=0]{figures/zp27tev-ref.pdf}}
-\vspace*{-1.30cm}
+  \centering
+\includegraphics[trim={2cm 2cm 2cm 2cm},clip,width=0.49\columnwidth]{figures/zp27tev-ref.pdf}
 \caption{ Same as the top panel in the previous Figure but now for the HE-LHC.}
 \label{toy2}
 \end{figure}
@@ -222,10 +222,9 @@ modes.
 
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=5.0in,angle=0]{figures/compare2.pdf}}
-\vspace*{-2.5cm}
-\centerline{\includegraphics[width=5.0in,angle=0]{figures/compare3.pdf}}
-\vspace*{-1.30cm}
+  \centering
+\includegraphics[trim={2cm 2cm 2cm 2cm},clip,width=0.49\columnwidth]{figures/compare2.pdf}
+\includegraphics[trim={2cm 2cm 2cm 2cm},clip,width=0.49\columnwidth]{figures/compare3.pdf}
 \caption{(Top) $\sigma B_l$ vs $A_{FB}$ and (Bottom) $r_y$ vs $A_{FB}$ at the HE-LHC assuming $M_Z'=6$ TeV as discussed in the text. 
 SSM(black), LRM(red), $\psi$ (blue), $\chi$ (green), $\eta$ (magenta) and I (cyan). $1\sigma$ errors only are shown. }
 \label{toy3}
@@ -235,40 +234,61 @@ SSM(black), LRM(red), $\psi$ (blue), $\chi$ (green), $\eta$ (magenta) and I (cya
 
 
 \section{Discrimination from detector level analysis}
-The analysis presented in this section are all performed within the FCC software framework, FCCSW~\cite{fccsw}.
+The analyses presented in this section are all performed within the FCC software framework, FCCSW~\cite{fccsw}.
 The detector parametrisation considered in this study is from HE-LHC official parametrisation for the yellow report~\cite{HELHCtwiki}.
 
 \subsection{Leptonic analysis}
+Events are required to contain at least two leptons with $\pt > 0.5$~TeV, $|\eta|$<4. 
+
+Figure~\ref{figure:lepana:mass} shows the invariant mass for a 6~TeV signal for the $ee$ (left) and $\mu\mu$ channels (right). 
+The mass resolution is better for the ee channel, as expected from calorimetry. 
+Several proxies for the true resonance mass have been tested, such as the invariant mass of the two taus, with and without correction for the missing energy. The transverse mass provided the best sensitivity and was therefore used to set limits and determine the discovery reach.
+
 \label{sec:lepana}
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.45\columnwidth]{figures/Zpmumu_mzp_sel0_nostack_log.eps}
+    \includegraphics[width=0.45\columnwidth]{figures/Zpee_mzp_sel0_nostack_log.eps}
+   \caption{Invariant mass for a 6~TeV signal after full event selection for ee channel (left) and $\mu\mu$ channel (right).}
+  \label{figure:lepana:mass}
+\end{figure}
+
+show yZ plot
+explain AFB and ry
+
+impact of eta cut
+impact of ISR/SFR
+
 
 \subsection{Hadronic analysis}
 In this section the hadronic decays of the $Z'$ will be tested in order to enhance the discrimination potential.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.30\columnwidth]{figures/Mj1j2_pf08_MetCorr_fit_sel0_nostack_log_tt.eps}
+  \includegraphics[width=0.30\columnwidth]{figures/Mj1j2_pf08_MetCorr_fit_sel0_nostack_log_bb.eps}
+  \includegraphics[width=0.30\columnwidth]{figures/Mj1j2_pf08_MetCorr_fit_sel0_nostack_log_jj.eps}
+  \caption{Left, center: Invariant mass for a 6~TeV signal after full event selection for ee channel (left) and $\mu\mu$ channel (center). Right: Transverse mass for a 6~TeV signal after full event selection for the $\tau\tau$ channel. }
+  \label{figure:leptonicresonances:masses}
+\end{figure}
+
 \subsubsection{Results}
 
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_4TeV_5ab.eps}
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_6TeV_5ab.eps}
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_8TeV_5ab.eps}
-  \caption{Discrimination for 4, 6 and 8TeV masses with 5ab$^{-1}$ of integrated luminosity.}
-  \label{figure:hadana:discri5ab}
-\end{figure}
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_4TeV_15ab.eps}
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_6TeV_15ab.eps}
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_8TeV_15ab.eps}
-  \caption{Discrimination for 4, 6 and 8TeV masses with 15ab$^{-1}$ of integrated luminosity}
-  \label{figure:hadana:discri15ab}
-\end{figure}
+     \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_4TeV_5ab.eps}
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_6TeV_5ab.eps}
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_8TeV_5ab.eps}
 
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_4TeV_30ab.eps}
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_6TeV_30ab.eps}
-    \includegraphics[width=0.45\columnwidth]{figures/Zp_branching_8TeV_30ab.eps}
-  \caption{Discrimination for 4, 6 and 8TeV masses with 30ab$^{-1}$ of integrated luminosity}
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_4TeV_15ab.eps}
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_6TeV_15ab.eps}
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_8TeV_15ab.eps}
+
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_4TeV_30ab.eps}
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_6TeV_30ab.eps}
+    \includegraphics[width=0.3\columnwidth]{figures/Zp_branching_8TeV_30ab.eps}
+  \caption{Discrimination for 4, 6 and 8TeV (left, center, right) masses with 5, 15 and 30ab$^{-1}$ (up, middle, down) of integrated luminosity. Statistical and full uncertainties are shown on each point.}
   \label{figure:hadana:discri30ab}
 \end{figure}
 
