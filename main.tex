@@ -236,15 +236,26 @@ SSM(black), LRM(red), $\psi$ (blue), $\chi$ (green), $\eta$ (magenta) and I (cya
 \section{Discrimination from detector level analysis}
 The analyses presented in this section are all performed within the FCC software framework, FCCSW~\cite{fccsw}.
 The detector parametrisation considered in this study is from HE-LHC official parametrisation for the yellow report~\cite{HELHCtwiki}.
-Leptonic decays are presented in~\ref{subsection:lepana}, and hadronic analyses in~\ref{subsection:hadana}.
+The Monte Carlo are first presented in Section~\ref{subsection:MC} Leptonic decays are presented in~\ref{subsection:lepana}, and hadronic analyses in~\ref{subsection:hadana}.
+
+
+\subsection{Monte Carlo Samples}
+\label{subsection:MC}
+Monte Carlo~(MC) simulated event samples were used to simulate the response of the FCC detector to signal and backgrounds. The muon momentum resolution 
+is assumed to be $\sigma(p)/p \approx 20\%$ at $\pt= 20 $TeV. Signals are generated with {\scshape Pythia}~8.230~\cite{Sjostrand:2014zea} using the leading 
+order cross-section from the generator. All lepton flavour decays of the $Z'$ are generated assuming universality of the couplings.
+The Drell-Yan background has been generated using {\scshape MG5\_}a{\scshape MC@NLO}~2.5.2~\cite{Alwall:2014hca} at leading order only. 
+A k-factor of 2 is applied to all the background processes.
+
+
 
 \subsection{Leptonic analysis}
 \label{subsection:lepana}
-Events are required to contain at least two leptons with $\pt > 0.5$~TeV, $|\eta|$<4. 
-
+Events are required to contain at least two same flavour leptons of opposite charge with $\pt > 500$~GeV, $|\eta|<$4.5. 
+When mentioned a smaller acceptance of $|\eta|<$2.5 is considered to test the impact on the reduction of the statistics. 
+An additional cut on the di-lepton invariant mass $m_{ll}>1$~TeV is applied to remove the low mass Drell-Yan. 
 Figure~\ref{figure:lepana:mass} shows the invariant mass for a 6~TeV signal for the $ee$ (left) and $\mu\mu$ channels (right). 
-The mass resolution is better for the ee channel, as expected from calorimetry. 
-Several proxies for the true resonance mass have been tested, such as the invariant mass of the two taus, with and without correction for the missing energy. The transverse mass provided the best sensitivity and was therefore used to set limits and determine the discovery reach.
+The mass resolution is better for the ee channel, as expected from the higher performance of the electro-magnetic calorimeter at high energy.
 
 \label{sec:lepana}
 \begin{figure}[h]
@@ -254,6 +265,12 @@ Several proxies for the true resonance mass have been tested, such as the invari
    \caption{Invariant mass for a 6~TeV signal after full event selection for ee channel (left) and $\mu\mu$ channel (right).}
   \label{figure:lepana:mass}
 \end{figure}
+
+Limits and 
+
+\subsubsection{Variables definition}
+\label{subsubsection:vardef}
+
 
 show yZ plot
 explain AFB and ry
@@ -377,6 +394,24 @@ This work was supported by the Department of Energy, Contract DE-AC02-76SF00515.
 \bibitem{fccsw} FCCSW main page, http://fccsw.web.cern.ch/fccsw/
 
 \bibitem{HELHCtwiki} HE-LHC twiki https://twiki.cern.ch/twiki/bin/view/LHCPhysics/HLHELHCWorkshop
+
+\bibitem{Sjostrand:2014zea}
+  T.~Sjöstrand {\it et al.},
+  %``An Introduction to PYTHIA 8.2,''
+  Comput.\ Phys.\ Commun.\  {\bf 191} (2015) 159
+  doi:10.1016/j.cpc.2015.01.024
+  [arXiv:1410.3012 [hep-ph]].
+  %%CITATION = doi:10.1016/j.cpc.2015.01.024;%%
+  %1167 citations counted in INSPIRE as of 18 Sep 2018
+
+\bibitem{Alwall:2014hca}
+  J.~Alwall {\it et al.},
+  %``The automated computation of tree-level and next-to-leading order differential cross sections, and their matching to parton shower simulations,''
+  JHEP {\bf 1407} (2014) 079
+  doi:10.1007/JHEP07(2014)079
+  [arXiv:1405.0301 [hep-ph]].
+  %%CITATION = doi:10.1007/JHEP07(2014)079;%%
+  %3067 citations counted in INSPIRE as of 18 Sep 2018
 
 \end{thebibliography}
 
