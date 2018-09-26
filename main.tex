@@ -142,7 +142,7 @@ there are sufficient observables to perform this model differentiation in most c
 \section{Context of the study}
 It is legitimate to assume that a heavy resonance could be seen at the end of High Luminosity LHC (HL-HLC). If that is the case a new collider with higher energy 
 in the center of mass is needed to study its property as not enough events will be available at 14~TeV. In this document we present the discrimination potential of a High Energy LHC (HE-LHC)
-with a center of mass energy of 27~TeV.
+with an assumed center of mass energy of 27~TeV.
 
 
 \section{Bounds from HL-LHC}
@@ -195,8 +195,9 @@ $\eta$   &  6.15     &  5.59  &  5.16   \\
 
 
 \section{Discrimination from direct calculations}
-Question: Can we use just this dilepton channel to distinguish between these six $Z'$ models?  
-
+Question: Can we use just this dilepton channel to distinguish between these six $Z'$ models? 
+\newline
+\\
 We make use of 3 observables, all in NWA: $\sigma B_l$, the forward-backward asymmetry, $A_{FB}$ and the rapidity ratio, $r_y$. These last two are defined 
 and discussed at some extent in both \cite{Rizzo:2014xma} and \cite{Han:2013mra}.  Given the ATLAS and CMS analyses as presented in \cite{Han:2016qpd} 
 and \cite{CMS:2017zzj} we employ the entire range of rapidity $|y|\leq 2.5$ in defining these quantities. Based on these same works and \cite{Han:2013mra}, 
@@ -251,6 +252,8 @@ A k-factor of 2 is applied to all the background processes.
 
 \subsection{Leptonic analysis}
 \label{subsection:lepana}
+\subsubsection{Event selection and discovery potential}
+
 Events are required to contain at least two same flavour leptons of opposite charge with $\pt > 500$~GeV, $|\eta|<$4.5. 
 When mentioned a smaller acceptance of $|\eta|<$2.5 is considered to test the impact on the reduction of the statistics. 
 An additional cut on the di-lepton invariant mass $m_{ll}>1$~TeV is applied to remove the low mass Drell-Yan. 
@@ -266,22 +269,68 @@ The mass resolution is better for the ee channel, as expected from the higher pe
   \label{figure:lepana:mass}
 \end{figure}
 
-Limits and 
+Limits and discovery potential for di-lepton resonances are shown in Figure~\ref{figure:lepana:limdisc}. With the full 15~ab$^{-1}$ 
+integrated luminosity, it is expected to exclude heavy $Z'$ resonances from 10 to 12.5~TeV depending on the model and discover 
+a $Z'_{SSM}$ up to 12~TeV.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.45\columnwidth]{figures/lim_Zprime_ll_helhc_v01_allxs.eps}
+  \includegraphics[width=0.45\columnwidth]{figures/DiscoveryPotential_ll_comb_rootStyle.eps}
+  \caption{Limit versus mass for the di-lepton channel (left) and luminosity for a $5\sigma$ discovery (right) for the ee and $\mu\mu$ combined channels. }
+  \label{figure:lepana:limdisc}
+\end{figure}
+
 
 \subsubsection{Variables definition}
 \label{subsubsection:vardef}
 
+As for the analysis from direct calculation, the observables are defined at the detector level. On Figure~\ref{figure:lepana:yzp} the 
+rapidity of the $Z'$ is displayed, and as expected it is much more central for the signal than for the Drell-Yan background.
 
-show yZ plot
-explain AFB and ry
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.45\columnwidth]{figures/yzp_sel0_lin_norm_ee.eps}
+  \includegraphics[width=0.45\columnwidth]{figures/yzp_sel0_lin_norm_mumu.eps}
+  \caption{$Z'$ rapidity distribution comparing a 6~TeV signal and Drell-Yan background for ee (left) and $\mu\mu$ channels (right).}
+  \label{figure:lepana:yzp}
+\end{figure}
 
+At detector level the variable $r_y$ is defined as the ratio of central over forward events:
+\begin{equation}
+r_y = \frac{\sigma(|y_{Z'}| < y_1)}{\sigma(y_1 < |y_{Z'}| <y_2)}
+\end{equation}
+with $y_1=0.5$ and $y_2=2.5$ for this study.
+
+The variable $A_{FB}$ can be seen as a measure of the charge asymmetry
+\begin{equation}
+A_{FB} = A_C =  \frac{\sigma(\Delta|y| > 0) - \sigma(\Delta|y| < 0)}{\sigma(\Delta|y| > 0) + \sigma(\Delta|y| < 0)}
+\end{equation}
+where $\Delta|y| = |y_l| - |y_{\bar{l}}|$. It has been checked that this definition is equivalent to defining 
+\begin{equation}
+A_{FB} =   \frac{\sigma_F - \sigma_B}{\sigma_F + \sigma_B}
+\end{equation}
+with $\sigma_F = \sigma (cos\theta^{*}_{cs})>0$ and $\sigma_B = \sigma (cos\theta^{*}_{cs})<0$ and defining $\theta^*$ in the Collins-Soper 
+frame as
+\begin{equation}
+cos\theta^{*}_{cs} =  \frac{Q_z}{|Q_z|} \frac{2(P_l^+P_{\bar{l}}^- - P_l^-P_{\bar{l}}^+)}{|Q| \sqrt{Q^2+Q^2_T}}
+\end{equation}
+where $Q$, $Q_T$ and $Q_z$ are the four-momentum, the transverse momentum, and the longitudinal
+momentum of the di-lepton pair. $P_{l}(P_{\bar{l}})$ represents the four momenta of the lepton (anti-lepton),
+and $P^\pm_l = (P^0_l \pm P^3_l)$.
+\newline
 impact of eta cut
+\newline
 impact of ISR/SFR
-
+\newline
+show cross section versus int luminosity
+\newline
+show error on AFB ry for models 
 
 \subsection{Hadronic analysis}
 \label{subsection:hadana}
-In this section the hadronic decays of the $Z'$ will be tested in order to enhance the discrimination potential.
+In this section the hadronic decays of the $Z'$ will be tested in order to enhance the discrimination potential. 
+
 
 \begin{figure}[h]
   \centering
