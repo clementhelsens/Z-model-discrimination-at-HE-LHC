@@ -318,19 +318,62 @@ cos\theta^{*}_{cs} =  \frac{Q_z}{|Q_z|} \frac{2(P_l^+P_{\bar{l}}^- - P_l^-P_{\ba
 where $Q$, $Q_T$ and $Q_z$ are the four-momentum, the transverse momentum, and the longitudinal
 momentum of the di-lepton pair. $P_{l}(P_{\bar{l}})$ represents the four momenta of the lepton (anti-lepton),
 and $P^\pm_l = (P^0_l \pm P^3_l)$.
-\newline
-impact of eta cut
-\newline
-impact of ISR/SFR
-\newline
-show cross section versus int luminosity
-\newline
-show error on AFB ry for models 
+
+
+\subsubsection{Optimisations}
+\label{subsubsection:opti}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.45\columnwidth]{figures/afb_vs_dm_0p.eps}
+  \includegraphics[width=0.45\columnwidth]{figures/afb_vs_dm_10p.eps}
+    \includegraphics[width=0.45\columnwidth]{figures/afb_vs_dm_20p.eps}
+  \includegraphics[width=0.45\columnwidth]{figures/afb_vs_dm_interf.eps}
+
+  \caption{$Z'$ rapidity distribution comparing a 6~TeV signal and Drell-Yan background for ee (left) and $\mu\mu$ channels (right).}
+  \label{figure:lepana:yzp}
+\end{figure}
+
+
+\subsubsection{Results}
+\label{subsubsection:results}
+TODOBEGING\\
+show cross section versus int luminosity, show error on AFB ry for models (2D), show scan lumi for hard to distinguish model, table that shows this impact of the eta, ISR, FSR, etc...
+plot that shows how AFB and ry evolves with the deltaM cut
+Show the effect of a cut a different cut on ry
+TODOEND\\
+
+\begin{table}
+\centering
+\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c |} \hline\hline
+ & \multicolumn{2}{c|}{nominal}  & \multicolumn{2}{c|}{$|\eta|<4.5$} & \multicolumn{2}{c|}{no FSR} & \multicolumn{2}{c|}{no ISR} & \multicolumn{2}{c|}{Full interference}\\
+
+\hline
+  Model &  $A_{FB}$   &  $r_y$   &  $A_{FB}$   &  $r_y$&  $A_{FB}$   &  $r_y$&  $A_{FB}$   &  $r_y$&  $A_{FB}$   &  $r_y$ \\
+\hline
+SSM    &     6.62     &  6.09   &     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09      \\
+LRM    &   6.39       &  6.09   &     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09 \\
+$\psi$    &  6.10   &  6.09   &     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09   \\
+$\chi$   &  6.22    &  6.09   &     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09    \\
+$\eta$   &  6.15     &  6.09   &     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09    \\
+~I        & 5.98   &  6.09   &     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09&     6.62     &  6.09   \\
+\hline\hline
+\end{tabular}
+\caption{$A_{FB}$ and $r_y$ values for different models and different assumptions.}
+\label{tab:leptonicresonances:comp}
+\end{table}
+
+We have checked that increasing the acceptance of the leptons to 4.5 in pseudo-rapidity did not improved the discrimination further. 
+Using a profile likelihood technique, the signal strength $\mu$ can be fitted together with its corresponding error. 
+
 
 \subsection{Hadronic analysis}
 \label{subsection:hadana}
 In this section the hadronic decays of the $Z'$ will be tested in order to enhance the discrimination potential. 
 
+\subsubsection{$Z' \rightarrow t\bar{t}$}
+\subsubsection{$Z' \rightarrow b\bar{b}$}
+\subsubsection{$Z' \rightarrow q\bar{q}$}
 
 \begin{figure}[h]
   \centering
